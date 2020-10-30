@@ -1,0 +1,30 @@
+.home {
+    flex: 1 0 auto;
+}
+
+.home__banner {
+    width: 100%;
+    height: 40rem;
+    background-color: #fdce4b;
+    background: linear-gradient(70deg, #fdce4b 30%, #FFAB00 30%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__banner span {
+    margin: 0.5rem;
+    font-size: 5rem;
+    color: white;
+    border: 0.3rem solid white;
+    padding: 2rem;
+    text-transform: uppercase;
+}
+
+.home__categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0rem 5rem;
+}

@@ -1,0 +1,131 @@
+.productView {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productView__layout {
+    width: calc(100% - 10rem);
+    max-width: 90rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.productView__layout>* {
+    flex-basis: 50%;
+}
+
+.layout__wrapper {
+    flex-grow: 1;
+    flex-basis: 50%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layout__image {
+    visibility: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.layout__info {
+    flex-grow: 1;
+    min-height: 10rem;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-family: "Courier New", Courier, monospace
+}
+
+.info__multipleChoice {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    align-self: stretch;
+    background-color: #fdce4b;
+    margin: 0.5rem 0rem;
+}
+
+.info__multipleChoice span {
+    width: 8rem;
+    margin: 0rem 1rem;
+}
+
+.info__multipleChoice select {
+    flex-grow: 1;
+    border: 0.2rem solid #fdce4b;
+    appearance: none;
+    /*background: url(https://www.vhv.rs/dpng/d/276-2760689_drop-down-menu-arrow-png-download-drop-down.png) 95% / 5% no-repeat #EEE;*/
+    background: #eee;
+}
+
+.info__multipleChoice select option {
+    margin: 0rem 1rem;
+}
+
+.info__title {
+    font-size: 2.4rem;
+    margin: 1rem 0rem;
+}
+
+.info__price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.addSection {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.addSection__amount {
+    flex-grow: 0;
+    background-color: white;
+    border: 0.1rem solid #fdce4b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addSection__amount button {
+    background-color: transparent;
+    border: none;
+    padding: 0rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.addSection__amount span {
+    padding: 0rem 1rem;
+    font-size: 2rem;
+}
+
+.add__button {
+    flex-grow: 1;
+    border: none;
+    align-self: center;
+    padding: 0.5rem 2rem;
+    font-size: 2.4rem;
+    background-color: #fdce4b;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .productView__layout {
+        width: 100%;
+        flex-direction: column;
+    }
+    .productView__layout>* {
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,71 @@
+.admin {
+    font-size: 160% !important;
+    /*flex: 1 0 auto;
+    display: flex;
+    flex-flow: row wrap;*/
+}
+
+.admin__optionsContainer {
+    background-color: #314152;
+    padding-top: 1rem;
+    /*border-top: 1rem solid white;*/
+}
+
+.admin__formContainer {
+    padding: 1rem;
+    flex-grow: 1;
+    background-color: #EEEEEE;
+}
+
+.admin__options {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 1.6rem;
+}
+
+.admin__optionsTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #EEEEEE;
+    margin: 1rem 0rem;
+}
+
+.admin__option {
+    text-align: left;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    padding: 1.5rem 3rem;
+    color: #BDBDBD;
+    border: none;
+    cursor: pointer;
+}
+
+.admin__option:hover {
+    background-color: #314152 !important;
+}
+
+.admin__option.active {
+    background-color: #AD1457 !important;
+    color: white;
+}
+
+.admin__option.active:hover {
+    background-color: #AD1457 !important;
+}
+
+.admin__heading {
+    width: 100%;
+    display: block;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    padding: 1.5rem 3rem;
+    color: white;
+}
+
+.admin__view {
+    position: relative;
+    height: calc(100% - 4.75rem);
+    overflow-y: scroll;
+}

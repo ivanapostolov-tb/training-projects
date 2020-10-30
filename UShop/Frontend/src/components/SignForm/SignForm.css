@@ -1,0 +1,62 @@
+.sign {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 0.3rem solid #f0f0f0;
+    width: 90%;
+    max-width: 32rem;
+}
+
+.form__fieldsList {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.form__title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form__fieldsList li {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 2rem;
+}
+
+.form__fieldsList li input {
+    padding: 1rem;
+    border: 0.1rem solid #f0f0f0
+}
+
+.form__button {
+    padding: 1rem;
+    border: 0.1rem solid black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form__switchText {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form__switchButton {
+    background-color: #314455;
+    color: white
+}

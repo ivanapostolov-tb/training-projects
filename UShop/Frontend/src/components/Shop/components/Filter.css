@@ -1,0 +1,35 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 0.1rem solid #ededed;
+}
+
+.filter__title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: #314152;
+    margin: 1rem 0rem;
+}
+
+.filter__content {
+    display: flex;
+    flex-direction: column;
+    max-height: 18rem;
+    overflow-y: scroll;
+    color: #616161;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    line-height: 3rem;
+    text-transform: uppercase;
+}
+
+.checkbox input[type=checkbox] {
+    margin-right: 1rem;
+}

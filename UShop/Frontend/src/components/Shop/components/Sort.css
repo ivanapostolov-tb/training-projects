@@ -1,0 +1,32 @@
+.sort {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 0.1rem solid #ededed;
+}
+
+.sort__title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: #314152;
+    margin: 1rem 0rem;
+}
+
+.sort__options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sort__options div {
+    margin: 1rem 0rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    color: #616161;
+}
+
+.sort__options input[type=radio] {
+    margin-right: 1rem;
+}
