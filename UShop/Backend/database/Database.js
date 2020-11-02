@@ -304,8 +304,6 @@ class Database {
             this.sql = this.sql.substring(0, this.sql.lastIndexOf(' '));
         }
 
-        console.log(this.sql);
-
         return this;
     }
 

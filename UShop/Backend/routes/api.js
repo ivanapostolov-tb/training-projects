@@ -173,6 +173,60 @@ router.get('/product/:id', async (request, response) => {
     }
 });
 
+router.post('/product', upload.single('img'), authorize, async (request, response) => {
+    try {
+        if (isUndefined(request.file)) {
+            console.log('here');
+
+            return response.status(400).send({ error: "Bad request" });
+        }
+
+        if (!isUndefined(request.error)) {
+            deleteFile(request.file.filename)
+            return response.status(400).send({ error: "Bad request" })
+        }
+
+        const product = JSON.parse(request.body.product);
+
+        if (request.user.email !== 'admin@admin.com' || isUndefined(product)) {
+            deleteFile(request.file.filename);
+            return response.status(401).send({ error: "Permission Denied" });
+        }
+
+        const res = await db.insert('Items', [product.categoryid, product.name, JSON.stringify({ gender: product.gender, material: product.material, brand: product.brand }), product.price]);
+
+        const id = res.rows[0].id;
+
+        for (const variation of product.variations) {
+            await db.insert('ItemVariations', [id, variation.color, variation.size, variation.quantity]);
+        }
+
+        await renameFile(request.file.filename, `product${id}.png`);
+
+        return response.status(200).json({ result: "Product inserted" });
+    } catch (e) {
+        console.error(e.message);
+
+        return response.status(500).send({ error: "Internal server error" });
+    }
+});
+
+router.put('product/:id', async (request, response) => {
+    try {
+        /*if (request.user.email !== 'admin@admin.com') {
+            return response.status(401).send({ error: "Permission Denied" });
+        }*/
+
+        const id = request.params.id;
+
+        console.log(id);
+
+        return response.status(200).send({ result: "Product updated" });
+    } catch (e) {
+        return response.status(500).send({ error: "Internal server error" });
+    }
+});
+
 router.get('/filters/:categoryid', async (request, response) => {
     try {
         const id = request.params.categoryid;
@@ -236,6 +290,16 @@ router.post('/order', authorize, async (request, response) => {
         response.status(200).json({ status: "New order added" });
     } catch (e) {
         console.log(e.message);
+    }
+});
+
+router.delete('product/:id', authorize, async (request, response) => {
+    try {
+        const id = request.params.id;
+    } catch (e) {
+        console.error(e.message);
+
+        response.status(500).json({ status: "Internal server error" });
     }
 });
 
